@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{%  static "main.css" %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>The page is a template to be inherited</h1>
+    <h2>The purpose is for a theme to be same all around</h2>
+    <h2>Managing repeating things</h2>
+
+
+    {% block content%}
+    {% endblock %}
+</body>
+</html>
+
+

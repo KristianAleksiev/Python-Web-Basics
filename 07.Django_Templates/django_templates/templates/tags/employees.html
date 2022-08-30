@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+{% block content %}
+<h1>This is template loaded from a custom tag</h1>
+<ul>
+    {% for employee in employees %}
+    <li>{{ employee }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

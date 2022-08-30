@@ -1,0 +1,63 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load string_filters %}
+{% load custom_tags %}
+{% block content %}
+
+
+    <h1>Template examples:</h1>
+    <h2>{{ title }} - Original</h2>
+    <h2>{{ title|lower }}:</h2>
+    <h2>{{ title|capfirst }}:</h2>
+
+    <ul>{% for employee in employees %}
+        <li><strong>{{ employee }}</strong></li>
+    {% endfor %}
+    </ul>
+
+    <p>{{ description|truncatewords:10 }}</p>
+    <p>{{ description|truncatechars:20 }}</p>
+
+    <ul>
+        <li>{{ employees|join:', ' }}</li>
+    </ul>
+    <p>
+        {% if first_number >= second_number %}
+            {{ first_number }}
+
+        {% else %}
+            {{ second_number }}
+        {% endif %}
+    </p>
+
+    <div>
+        {% for number in numbers %}
+            <div>
+                {{ number }}
+            </div>
+        {% endfor %}
+
+    </div>
+
+
+    <div>
+        <p>For looping render sorted ASC:</p>
+        {% for number in numbers %}
+            <div>
+                {{ number }}
+            </div>
+        {% endfor %}
+
+    </div>
+
+    <div>
+        {{ csrf_token }}
+    </div>
+
+    <div>
+        Capitalized from custom filter: {{ csrf_token|capitalize }}
+    </div>
+
+
+    {% employees_list %}
+{% endblock %}
