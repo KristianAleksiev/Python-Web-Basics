@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms demo</title>
+</head>
+<body>
+{#    <form>#}
+{#        <input type="text" required>#}
+{#        <input type="number" required>#}
+{#        <input type="email" required>#}
+{#        <input type="range" required>#}
+{#        <input type="password" required>#}
+{#        <input type="checkbox" required>#}
+{#        <input type="radio" name="radio">#}
+{#        <select>#}
+{#            <option>One</option>#}
+{#            <option>Two</option>#}
+{#            <option>Three</option>#}
+{#        </select>#}
+{#        <button>Save, so I can validate</button>#}
+{#    </form>#}
+
+    <form method="POST" action="{% url 'create employee' %}">
+        {{ employee_form }}
+        <button>Save</button>
+    </form>
+</body>
+</html>
