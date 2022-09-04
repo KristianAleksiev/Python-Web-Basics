@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms demo</title>
+</head>
+<body>
+    <form>
+        <input type="text" required>
+        <input type="number" required>
+        <input type="email" required>
+        <input type="range" required>
+        <input type="password" required>
+        <input type="checkbox" required>
+        <input type="radio" name="radio">
+        <select>
+            <option>One</option>
+            <option>Two</option>
+            <option>Three</option>
+        </select>
+        <button>Save, so I can validate</button>
+    </form>
+
+<!--Unbound form example-->
+    <form method="post" action="/your-name/">
+        <label for="your_name">Your name:</label>
+        <input id="your_name" type="text" name="your_name" value="{{current_name}}">
+        <input type="submit" value="OK">
+    </form>
+</body>
+</html>
+<!--Bound Django form - VIEWS-->
+
+<!--class EmployeeForm(forms.Form):-->
+<!--first_name = forms.CharField(max_length=40, label="Enter your first name")-->
+<!--last_name = forms.CharField(max_length=40, )-->
+<!--    age = forms.IntegerField(widget=forms.TextInput(attrs={"type": "range"}))-->
+<!--    password = forms.CharField(widget=forms.PasswordInput, )-->
+<!--    birthday = forms.DateTimeInput()-->
+<!--    sender = forms.EmailField()-->
+<!--    message = forms.CharField(widget=forms.Textarea)-->
+
+<!--def create_employee(request):-->
+<!--    print(request.method)-->
+<!--    print(request.GET)-->
+
+
+<!--ADDING THE CSRF_TOKEN-->
+    <form method="POST" action="{% url 'create employee' %}">
+        {{ employee_form }}
+            {% crsf_token %}
+        <button>Save</button>
+    </form>
